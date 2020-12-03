@@ -1,5 +1,5 @@
-import Ray, { rayColor } from "./ray";
-import Vector from "./vector";
+import Ray, { rayColor } from "./models/ray";
+import Vector from "./models/vector";
 
 const ASPECT_RATIO = 16.0 / 9.0;
 const IMAGE_WIDTH = 400;
