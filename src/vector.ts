@@ -9,11 +9,27 @@ export default class Vector {
         this.z = z;
     }
 
-    dotProduct(b: Vector): Vector {
-        return new Vector(this.x * b.x, this.y * b.y, this.z * b.z);
+    add(b: Vector): Vector {
+        return new Vector(this.x + b.x, this.y + b.y, this.z + b.z);
     }
 
-    static unitVector(): Vector {
-        return new Vector(1, 1, 1);
+    subtract(b: Vector): Vector {
+        return new Vector(this.x - b.x, this.y - b.y, this.z - b.z);
+    }
+
+    multiply(s: number): Vector {
+        return new Vector(this.x * s, this.y * s, this.z * s);
+    }
+
+    divide(s: number): Vector {
+        return new Vector(this.x / s, this.y / s, this.z / s);
+    }
+
+    mag(): number {
+        return Math.sqrt((this.x * this.x) + (this.y * this.y) + (this.z * this.z));
+    }
+
+    normalize(): Vector {
+        return this.divide(this.mag());
     }
 }
