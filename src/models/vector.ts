@@ -33,3 +33,15 @@ export default class Vector {
         return this.divide(this.mag());
     }
 }
+
+export const dot = (a: Vector, b: Vector) => {
+    return (a.x * b.x) + (a.y * b.y) + (a.z * b.z);
+}
+
+export const cross = (a: Vector, b: Vector) => {
+    return new Vector(
+        a.y * b.z - a.z * b.y,
+        a.z * b.x - a.x * b.z,
+        a.x * b.y - a.y * b.x
+    );
+}
